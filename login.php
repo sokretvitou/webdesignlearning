@@ -1,11 +1,12 @@
 <?php
 	session_start();	
-	if(isset($_SESSION['name'])){
-	echo $_SESSION['name'];
-	unset($_SESSION['name']);	
+	if(isset($_SESSION['loginreq'])){
+	echo $_SESSION['loginreq'];
+	unset($_SESSION['loginreq']);	
 	}
 	if(isset($_POST['submit'])){
-	$user = array('test@gmail.com' => '123456');
+	$user = array('test@gmail.com' => '123456'
+					,'test2@gmail.com' =>'123456');
 
 	$email = isset($_POST['email']) ? $_POST['email'] : '';
 	$pwd = isset($_POST['pwd']) ? $_POST['pwd'] : '';
@@ -53,7 +54,7 @@
     <div class="checkbox">
       <label><input type="checkbox" name="remember"> Remember me</label>
     </div>
-    <button type="submit" class="btn btn-default" name="submit">Submit</button>
+    <button type="submit" class="btn btn-default" name="submit">Sign in</button>
   </form>
 </div>
     <!-- Optional JavaScript -->
