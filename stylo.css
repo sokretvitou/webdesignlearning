@@ -1,0 +1,13 @@
+div.card {
+	width: 18.6%;
+	text-align: left;
+	margin-bottom: 20px;
+	margin-left: 15px;
+}
+div.card-body {
+	padding: 10px;
+}
+div.card-title{
+	font-size: 100px;
+}
+

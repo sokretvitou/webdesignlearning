@@ -33,7 +33,7 @@
 			
 			<!-- Modal Box -->
 			<div class="modal fade" id="img<?php echo $row['id']?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-			  <div class="modal-dialog modal-dialog-centered">
+			<div class="modal-dialog modal-dialog-centered">
 				<div class="modal-content">
 				   <div class="modal-header">
                           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -41,7 +41,7 @@
 				   </div>
 				  <div class = "modal-body">
 				  	<img style="height:auto;width:auto" src= "image\\<?php echo $row['name']?>"  alt= "image/<?php echo $row['name']?>">
-				  </div>
+				   </div>
 			     </div>
 			   </div>
 			 </div>

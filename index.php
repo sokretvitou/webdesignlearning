@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
 	
 	<!-- Style CSS -->
-	<link rel="stylesheet" href="style.css" type="text/css">
+	<link rel="stylesheet" href="stylo.css" type="text/css">
 	
     <title>Pick Box</title>
   </head>
@@ -42,7 +42,7 @@
 							<ul class="navbar-nav mr-auto">
 								<!-- Navbar link, nothing to add-->
 								<li class="nav-item active">
-									<a class="nav-link" href="#">Browse</a>
+									<a class="nav-link" href="home.php">Browse</a>
 								</li>
 								<li class="nav-item">
 									<a class="nav-link" href="#">Link</a>
@@ -61,7 +61,7 @@
 						<div class="mx-auto order-0">
 						
 							<!-- Logo or Name -->
-							<a class="navbar-brand mx-auto" href="index.php">Pick Box</a>
+							<a class="navbar-brand mx-auto" href="home.php">Pick Box</a>
 							<button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
 								<span class="navbar-toggler-icon"></span>
 							</button>
@@ -70,13 +70,16 @@
 						<!-- Navbar Dropdown -->
 						<div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
 							<ul class="navbar-nav ml-auto">
+									<li class="nav-item">
+										<a class="nav-link" href="index.php">My Box</a>
+									</li>
 								  <li class="nav-item dropdown">
 										<!-- Username on Navbar dropdown -->	
 										<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 										  <?php echo $_SESSION['uname'] ?>
 										</a>
 										<!-- Dropdown link -->
-										<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+										<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 										  <a class="dropdown-item" href="#">Holla</a>
 										  <a class="dropdown-item" href="#">Settings</a>
 										  <div class="dropdown-divider"></div>
@@ -152,16 +155,14 @@
 			while($row = $stm->fetch()){
 		?>
 		
-		<div class="col-sm-6 col-md-4">
-				<div class="polaroid">
-					<!-- File loadout -->
-					<a href="image\\<?php echo $row['name']?>" target="_blank"><img style="height:200px;width:260px" src= "image\\<?php echo $row['name']?>" alt= "image/<?php echo $row['name']?>"></a>
-					<div class="polaroid-bottom">
-					<!-- Delete button -->
-					<a href="?delete=<?php echo $row['name']?>&id=<?php echo $row['id']?>" class="btn btn-danger" role="button">Delete</a>
-					</div>
-				</div>
-		</div>
+		<div class="card">
+						<a href="image\\<?php echo $row['name']?>" target="_blank"><img style="height:150px;width:210px" src= "image\\<?php echo $row['name']?>" alt= "image/<?php echo $row['name']?>"></a>
+					  <div class="card-body">
+						<p class="card-title"><?php echo $row['name']?></p>
+						<a href="download.php?id=<?php echo $row['id'] ?>" class="btn btn-danger" role="button">Download</a>
+						<a href="?delete=<?php echo $row['name']?>&id=<?php echo $row['id'] ?>" class="btn btn-danger" role="button">Delete</a>
+						</div>
+					</div>	
 		<?php
 			}		
 		?>
